@@ -1,11 +1,12 @@
 class resolv {
 	define file ( $domain, $search, $nameserver ) {
-		file { "/etc/resolv.conf":
+		file { "resolv.conf":
 			ensure => present,
+			path => "/etc/resolv.conf",
 			owner => root,
 			group => root,
 			mode => 0644,
-			content => template('resolv.conf.erb'),
+			content => template('resolv/resolv.conf.erb'),
 		}
 	}
 }
