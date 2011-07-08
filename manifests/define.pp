@@ -1,5 +1,5 @@
-class resolv {
-	define file ( $domain, $search, $nameserver ) {
+class resolv::define {
+	define nameserver ( $domain, $search, $nameserver ) {
 		file { "resolv.conf":
 			ensure => present,
 			path => "/etc/resolv.conf",
